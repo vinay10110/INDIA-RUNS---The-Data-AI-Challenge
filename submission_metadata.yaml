@@ -21,7 +21,7 @@ team_members:
 # ============================================================================
 github_repo: "https://github.com/vinay10110/INDIA-RUNS---The-Data-AI-Challenge"
 
-sandbox_link: "https://huggingface.co/spaces/vinay10110/redrob-ranker"
+sandbox_link: "https://india-runs---the-data-ai-challenge.streamlit.app"
 # Required. A working hosted environment where the ranker can be run on a small
 # candidate sample. See Section 10.5 of submission_spec.md for acceptable
 # platforms (HuggingFace Spaces, Streamlit Cloud, Replit, Colab, Docker, Binder).

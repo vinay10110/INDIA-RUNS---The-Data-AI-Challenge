@@ -27,15 +27,15 @@ reproduce_command: "python Code/run_pipeline.py --input ./Data/candidates.jsonl 
 # Compute environment
 # ============================================================================
 compute:
-  platform: "Local PC (Intel/AMD Core)"                    # Or: "AWS EC2 c5.4xlarge", "Local Linux box", etc.
-  cpu_cores: 12                                  # Number of CPU cores used
-  ram_gb: 16                                    # Available RAM in GB
-  python_version: "3.12.4"                      # python --version
-  os: "Windows 11"                              # Or "Ubuntu 22.04 LTS", etc.
-  uses_gpu_for_inference: false                 # Must be false — see compute constraints
-  has_network_during_ranking: false             # Must be false — no API calls during ranking
-  pre_computation_required: false               # true if you pre-compute embeddings or train models offline
-  pre_computation_time_minutes: 0               # Approximate, if applicable
+  platform: "Local PC (Intel/AMD Core)"                    
+  cpu_cores: 12                                
+  ram_gb: 16                                    
+  python_version: "3.12.4"                      
+  os: "Windows 11"                              
+  uses_gpu_for_inference: false                 
+  has_network_during_ranking: false             
+  pre_computation_required: false               
+  pre_computation_time_minutes: 0               
 
 # ============================================================================
 # AI tools declaration
