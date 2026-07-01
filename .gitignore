@@ -14,3 +14,4 @@ Data/candidates.jsonl
 # Pipeline outputs and intermediate state
 Reports/
 *.jsonl
+!Data/candidates_10k.jsonl
