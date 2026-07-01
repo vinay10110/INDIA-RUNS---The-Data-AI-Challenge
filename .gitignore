@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Large candidate dataset
+Data/candidates.jsonl
+
+# Pipeline outputs and intermediate state
+Reports/
+*.jsonl
