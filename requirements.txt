@@ -1,0 +1,8 @@
+# Redrob Hackathon - Team ME Dependencies
+#
+# This ranking pipeline is designed to be extremely lightweight and fast.
+# It runs entirely using Python's built-in standard library.
+#
+# No external third-party dependencies are required to reproduce the output.
+# You can run the pipeline directly using:
+# python Code/run_pipeline.py --input ./Data/candidates.jsonl --output ./submission.csv

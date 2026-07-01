@@ -1,0 +1,74 @@
+# Redrob Hackathon — Submission Metadata
+#
+# Filled in for Team - ME
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "Team - ME" 
+
+primary_contact:
+  name: "Bandla Sai Vinay Chakravarthi"
+  email: "vinaychakravarthi10110@gmail.com"   
+  phone: "+91-9346199051"        
+
+team_members:
+  - name: "Bandla Sai Vinay Chakravarthi"
+    email: "vinaychakravarthi10110@gmail.com"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/vinay10110/INDIA-RUNS---The-Data-AI-Challenge"
+
+sandbox_link: "https://huggingface.co/spaces/vinay10110/redrob-ranker"
+# Required. A working hosted environment where the ranker can be run on a small
+# candidate sample. See Section 10.5 of submission_spec.md for acceptable
+# platforms (HuggingFace Spaces, Streamlit Cloud, Replit, Colab, Docker, Binder).
+
+reproduce_command: "python Code/run_pipeline.py --input ./Data/candidates.jsonl --output ./submission.csv"
+# The single command that produces submission.csv from candidates.jsonl.
+# Should run end-to-end within 5 minutes on CPU with 16GB RAM and no network.
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local PC (Intel/AMD Core)"
+  cpu_cores: 12
+  ram_gb: 16
+  python_version: "3.12.4"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+# Transparency only — declared use is NOT penalized. Be honest. Stage 5 interview
+# may verify these declarations against your code; declarations that contradict
+# your code or your interview are flagged.
+ai_tools_used:
+  - "Gemini"        # For code design, refactoring, and pipeline alignment.
+  # Other options: "ChatGPT", "Cursor", "Claude", "GitHub Copilot", "Codeium", "Other", "None"
+
+ai_usage_summary: |
+  Used Gemini for pair programming, code design, and pipeline alignment. No candidate data was sent to hosted APIs; all candidate scoring runs locally on CPU.
+
+# ============================================================================
+# Approach summary (optional but recommended)
+# ============================================================================
+methodology_summary: |
+  End-to-end local python pipeline utilizing a six-stage hybrid discovery framework. Employs: (1) schema and date data quality filters, (2) strict regex word-boundary keyword mapping to score JD-aligned experience relevance (search, ranking, recsys, production), (3) disqualifiers for LangChain-only wrappers and pure research roles, (4) timeline overlap anomaly detection (moonlighting penalized, severe rejected), (5) behavioral signal tracking for candidate platform availability, and (6) final composite scoring (35% core fit, 20% search/retrieval, 15% production, 10% experience, 10% behavioral, 7% skills, 3% education) with shipper-leaning adjustments. Runtime is ~3 minutes for 100K candidates on CPU with 0% honeypot rate in the top 100.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true        # I have read submission_spec.md in full
+  code_is_original_work: true       # My code is my team's original work (using AI as a tool is fine)
+  no_collusion: true                # I have not coordinated my submission with other teams
+  honeypot_check_done: true         # OPTIONAL — set true if you explicitly checked for honeypots in your ranking
+  reproduction_tested: true         # I have tested that my reproduce_command runs end-to-end
