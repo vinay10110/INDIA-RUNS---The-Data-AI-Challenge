@@ -16,10 +16,7 @@ team_members:
 # ============================================================================
 github_repo: "https://github.com/vinay10110/INDIA-RUNS---The-Data-AI-Challenge"
 
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
-# Required. A working hosted environment where the ranker can be run on a small
-# candidate sample. See Section 10.5 of submission_spec.md for acceptable
-# platforms (HuggingFace Spaces, Streamlit Cloud, Replit, Colab, Docker, Binder).
+sandbox_link: "https://india-runs---the-data-ai-challenge-fnsauik2dtyvct2dh4luvo.streamlit.app"
 
 reproduce_command: "python Code/run_pipeline.py --input ./Data/candidates.jsonl --output ./submission.csv"
 
@@ -44,28 +41,26 @@ compute:
 ai_tools_used:
   - "ChatGPT"         
   - "Antigravity"  
+  - "copilot"
 
 
 ai_usage_summary: |
-  Briefly describe how AI tools were used. Examples:
-  - "Used Claude for code review and architectural discussion. Used Copilot for autocomplete.
-     No candidate data was fed to any LLM."
-  - "Used ChatGPT to debug Python issues and Cursor for refactoring."
-  - "No AI tools used."
+  - "Used Chatgpt for solution overview & architectural discussion."
+  - "Used Antigravity and copilot for code generation and editing."
 
 # ============================================================================
 # Approach summary (optional but recommended)
 # ============================================================================
 methodology_summary: |
-  ≤200 word summary of your approach. Strongly recommended.
-
-  Example:
-  "Rule-based ranker with explicit reasoning capture. Five scoring components
-  (skills, title+career, experience years, location, education) combined with
-  a multiplicative behavioral-signal modifier. The title component is the
-  decisive signal against keyword-stuffer traps; an endorsement-and-duration
-  trust multiplier on skills catches lazy keyword stuffing. Runtime is ~10
-  seconds for 50K candidates on CPU."
+  Deterministic high-performance ranking pipeline operating locally on CPU with standard library 
+  modules. Comprising: (1) validation of date format and schema, (2) JD relevance keywords using 
+  regular expression with word boundaries (\b) to filter out false positives, (3) disqualifying 
+  criteria for purely academic researchers, title seekers, and developers only using LangChain, 
+  (4) anomaly check for timeline overlaps (soft penalty capped at -5.0 points for moonlighting/honeypots), 
+  (5) penalties for platform inactivity and lack of responsiveness, and (6) 7-factor composite final 
+  score (35% Core Fit, 20% Search, 15% Prod ML, 10% Behavioral, 10% Exp, 7% Skills, 3% Edu) with 
+  shipper bonuses in the 0.0-1.0 scale. Dynamically constructs fact-based recruiter logic through 
+  sentence variations to ensure no repetition. Handles 100K records in 191.74s with 0% honeypots.
 
 # ============================================================================
 # Declarations
